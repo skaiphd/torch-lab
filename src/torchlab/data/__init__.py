@@ -13,3 +13,4 @@
 # limitations under the License.
 
 from torchlab.data.dataset import LabDataSet
+from torchlab.data.datamodule import LabDataModule
