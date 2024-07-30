@@ -1,0 +1,28 @@
+# for built-in resolvers
+# see https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html#built-in-resolvers
+data:
+  cache_dir: ${oc.env:PWD}/data/cache
+  training_path: ${oc.env:PWD}/data/cache/training_data.pq
+
+checkpoints:
+  experiments: ${oc.env:PWD}/checkpoints/experiments
+  pretrained: ${oc.env:PWD}/checkpoints/pretrained
+
+logs:
+  wandb: ${oc.env:PWD}/logs/experiments
+  profiler: ${oc.env:PWD}/logs/profiler
+  ray: ${oc.env:PWD}/logs/ray
+
+logger:
+  project: torchlab-trials
+
+model:
+  name: CustomModel
+
+trainer:
+  name: "trial"
+  storage_path: ${oc.env:PWD}/logs/
+  trial_dir: ${oc.env:PWD}/logs/ray
+  batch_size: 4
+
+seed: 42
